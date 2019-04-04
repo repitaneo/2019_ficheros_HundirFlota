@@ -1,5 +1,9 @@
 package com.marcos.view.general;
 
+import java.util.ArrayList;
+
+import com.marcos.data.access.Posicion;
+
 public class Tablero {
 
 	
@@ -15,12 +19,11 @@ public class Tablero {
 	
 	
 	
-	
-	
-	
-	
-	
-	
+	/**
+	 * Establezco el tocado en el tablero
+	 * @param fila
+	 * @param columna
+	 */
 	public void setTocado(int fila,int columna) {
 		
 		datos[fila][columna] = 1;
@@ -28,18 +31,9 @@ public class Tablero {
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	/**
+	 * Imprime el tablero
+	 */
 	public void print() {
 		
 		System.out.print("  ");
@@ -65,6 +59,24 @@ public class Tablero {
 				else System.out.print("* ");
 			}
 			System.out.println();
+		}
+	}
+
+
+
+
+	/**
+	 * coloco los datos de un array list en el tablero
+	 * @param datosFichero
+	 */
+	public void setDatosTocados(ArrayList<Posicion> datosFichero) {
+
+		// recorro el array list
+		for(Posicion posicion: datosFichero) {
+			
+			// para cada Posicion cojo su fila y columna y establezco
+			// el tocado en el tablero
+			setTocado(posicion.getFila(),posicion.getColumna());
 		}
 	}
 	

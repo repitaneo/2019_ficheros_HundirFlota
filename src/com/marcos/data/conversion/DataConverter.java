@@ -5,6 +5,14 @@ import com.marcos.errors.FormatNotFoundException;
 public class DataConverter {
 
 	
+	/**
+	 * Convierte filas, representadas por letras A, B, C, ... en 
+	 * 0, 1, 2, ... para un array
+	 * @param fila el char a convertir
+	 * @return el int que se corresponde con la tabla
+	 * @throws FormatNotFoundException cuando no le cuadra la letra porque este algoritmo
+	 * solamente contempla desde la A hasta la E
+	 */
 	public static int filaConverter(char fila) throws FormatNotFoundException {
 		
 		switch(fila) {
@@ -32,7 +40,14 @@ public class DataConverter {
 	
 	
 	
-	
+	/**
+	 * Convierte filas, representadas por letras 1, 2, 3, ... en 
+	 * 0, 1, 2, ... para un array
+	 * @param columna el int a convertir
+	 * @return el int que se corresponde con la tabla
+	 * @throws FormatNotFoundException cuando no le cuadra la columna porque este algoritmo
+	 * solamente contempla desde el 1 hasta el 5
+	 */
 	public static int columnaConverter(int columna) throws FormatNotFoundException {
 		
 		if((columna>=1)&&(columna<=5)) {
